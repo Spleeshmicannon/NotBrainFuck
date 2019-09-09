@@ -28,5 +28,9 @@ x   Multiply current cell by its neighbour to the left
 
 \#  Sets the cell to the value of the following symbol
 
+^   Increments base
+
+V   Decrements base
+
 Hello World for NotBrainFuck:
 >#H.#e.#l..#o.# .#W.#o.#r.#l.#d.>+++>+++<*+.

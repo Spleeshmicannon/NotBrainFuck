@@ -28,5 +28,5 @@ x   Multiply current cell by its neighbour to the left
 
 \#  Sets the cell to the value of the following symbol
 
-Hello World for NotBrainFuck
+Hello World for NotBrainFuck:
 >#H.#e.#l..#o.# .#W.#o.#r.#l.#d.>+++>+++<*+.

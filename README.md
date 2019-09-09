@@ -12,7 +12,7 @@ My own version of BrainFuck. It adds 8 new symbols. These are all to make the la
   
 \[ ] Performed actions encased repeatedly, until cell selected at the beginning of the loop is equal to 0
 
-Hello World Program from https://esolangs.org/wiki/Brainfuck:
+*Hello World Program from https://esolangs.org/wiki/Brainfuck:
 > ++++++++\[>++++\[>++>+++>+++>+<<<<-]>+>+>->>+\[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.
 
 # What NotBrainFuck Adds:
@@ -32,5 +32,5 @@ x   Multiply current cell by its neighbour to the left
 
 V   Decrements base
 
-Hello World for NotBrainFuck:
+*Hello World for NotBrainFuck:
 >#H.#e.#l..#o.# .#W.#o.#r.#l.#d.#!.>+++>+++x+.

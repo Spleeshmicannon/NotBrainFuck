@@ -1,7 +1,7 @@
 # NotBrainFuck
 My own version of BrainFuck. It adds 8 new symbols. These are all to make the language easier to use for beginners. Hence coining the name NotBrainFuck, since it goes against many of the original languages principals. I'm a first year CS major so I am happy to accept and learn from any criticisms.
 
-# The original Brainfuck operators:
+# The original Brainfuck Symbols:
 \>  Move the pointer to the right
   
 \<  Move the pointer to the left
@@ -15,7 +15,7 @@ My own version of BrainFuck. It adds 8 new symbols. These are all to make the la
 Hello World Program from https://esolangs.org/wiki/Brainfuck:
 > ++++++++\[>++++\[>++>+++>+++>+<<<<-]>+>+>->>+\[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.
 
-# My commands:
+# What NotBrainFuck Adds:
 \*  Multiply current cell by its neighbour to the right
 
 x   Multiply current cell by its neighbour to the left

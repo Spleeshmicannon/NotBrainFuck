@@ -64,8 +64,10 @@ void interpret(char *c, int argc)
 		}
 		
 		if( p<0 || p>100)
+		{
 			puts("RANGE ERROR");
 			return;
+		}
 	}
 }
 

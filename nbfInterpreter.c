@@ -1,3 +1,6 @@
+/*
+ * This a modified version of the interpreter made by Urban Müller.
+ */
 #include <stdio.h>
 #define TRUE 1
 #define FALSE 0

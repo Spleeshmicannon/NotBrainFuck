@@ -30,7 +30,7 @@ x   Multiply current cell by its neighbour to the left
 
 ^   Increments base
 
-V   Decrements base
+v   Decrements base
 
 ### Hello World for NotBrainFuck:
 > #H.#e.#l..#o.# .#W.#o.#r.#l.#d.^^>+>+xVV+.

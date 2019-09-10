@@ -33,4 +33,4 @@ x   Multiply current cell by its neighbour to the left
 v   Decrements base
 
 ### Hello World for NotBrainFuck:
-> #H.#e.#l..#o.# .#W.#o.#r.#l.#d.^^>+>+xVV+.
+> #H.#e.#l..#o.# .#W.#o.#r.#l.#d.^^>+>+xvv+.

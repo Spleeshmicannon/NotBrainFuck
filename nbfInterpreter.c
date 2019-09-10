@@ -28,7 +28,7 @@ void interpret(char *c, int argc)
 				case'\\': out[p] /= out[p-1];		  break; // divides current cell by its lower neighbour
 				case '#': out[p] = *c; 			  break; // makes the current cell = the next character as a char value (syntax for making cell = #d)
 				case '^': base++;			  break; // increases the base
-				case 'V': if(base > 1) base--;		  break; // decreases the base if is larger than one
+				case 'v': if(base > 1) base--;		  break; // decreases the base if is larger than one
 
 				// original BrainFuck
 				case '<': p--;                            break;

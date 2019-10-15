@@ -116,7 +116,7 @@ void interpret(char *c, int argc)
 				jmp.i++;
 				break;
 			case '}':
-				oldJmpI = jmp.i;
+				oldJmpI = jmp.i--;
 
 				if(jmp.a[jmp.i] == 0)
 				{

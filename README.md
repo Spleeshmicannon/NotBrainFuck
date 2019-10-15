@@ -32,5 +32,9 @@ x   Multiply current cell by its neighbour to the left
 
 v   Decrements base
 
+{x  a label for a goto command where 'x' is a label name
+
+}x  goto label 'x'
+
 ### Hello World for NotBrainFuck:
 > #H.#e.#l..#o.# .#W.#o.#r.#l.#d.^^>+>+xvv+.

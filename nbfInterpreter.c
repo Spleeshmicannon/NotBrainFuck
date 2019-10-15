@@ -20,7 +20,8 @@ struct stringAndPointer
 
 struct gotoExpressions
 {
-	char a[GOTO_MEMORY], l[GOTO_MEMORY];
+	char * a[GOTO_MEMORY];
+	char l[GOTO_MEMORY];
 	int i;
 };
 
@@ -111,7 +112,7 @@ void interpret(char *c, int argc)
 			case '^': base++;				 				 break; // increases the base
 			case 'v': if (base > 1) base--;			 		 break; // decreases the base if is larger than one
 			case '{': 
-				jmp.a[jmp.i] = *c++;
+				jmp.a[jmp.i] = c;
 				jmp.l[jmp.i] = *c;
 				jmp.i++;
 				break;
@@ -136,7 +137,7 @@ void interpret(char *c, int argc)
 					}
 				}
 
-				if(!changed)
+				if(changed)
 				{
 					puts("CAN'T FIND LABEL");
 					return;
@@ -146,10 +147,11 @@ void interpret(char *c, int argc)
 
 				if(out.a[out.i] != 0) // checking value of current cell
 				{
-					*c -= (*c - jmp.a[jmp.i]); // moving pointer
+					c = jmp.a[jmp.i]; // moving pointer
 				}
 
 				jmp.i = oldJmpI; // putting jmp.i back the way it was
+				changed = false;
 				break;
 			
 			// original BrainFuck

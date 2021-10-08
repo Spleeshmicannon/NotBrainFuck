@@ -205,7 +205,7 @@ void interpret(char *c, int argc)
 	}
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
 	// initialising structs/new types
 	in.p = in.a;
@@ -214,14 +214,18 @@ int main(int argc, char *argv[])
 	out.p = out.a;
 	out.i = 0;
 
-	char * f = "-f";
-	char * i = "-i";
-
-	if (compareString(argv[1], f))
+	// for interpreting programs as files
+	if (argc > 1)
 	{
-		// for interpreting programs as files
 		printf("Proccessing file...\n");
-		FILE * program = fopen(argv[2], "r");
+
+		FILE* program;
+		int err = fopen_s(&program, argv[1], "r");
+
+		if (err != 0)
+		{
+			printf("file not opened successfully\n");
+		}
 
 		if (program != NULL)
 		{
@@ -233,63 +237,9 @@ int main(int argc, char *argv[])
 			interpret(in.a, argc);
 		}
 	}
-	else if (compareString(argv[1], i))
-	{
-		// message used to explain use
-		printf("Write your program, character by character, using enter to interpret it as you need to.\n\n");
-		
-		// initialising variable
-		char command;
-
-		// A while loop where, getchar is assigned to command.
-		// Then it is checked if command is an EOF or \n character.
-		// Then the loop iterates through *pin and in[] as it does above and below.
-		// The loop label is so when n is pressed below the loop can be gone back to.
-		loop: while ((command = getchar()) != EOF && command != '\n') /////////// LOOP
-		{
-			*in.p++ = command;
-		}
-		
-		printf("Would you like to interpret the program (press y for yes, n for no, e for exit)\n");
-		
-
-		// goes back here if wrong input
-		// if yes the program is interpreted
-		question: if ((command = getchar()) == 'y') ///////// QUESTION
-		{
-			*in.p = 0;
-			interpret(in.a, argc);
-			printf("Would you like to continue programming (n) or exit (e)\n");
-			goto question;
-		}
-		else if (command == 'n')
-		{
-			goto loop;
-		}
-		else if (command == 'e')
-		{
-			printf("exiting\n");	
-		}
-		else
-		{
-			printf("Please press 'y', 'n' or 'e'\n");
-			goto question;
-		}
-	}
 	else
 	{
-		// for interpreting programs as command line arguments
-		printf("Processing command line arguments as a code.\n");
-		for (int i = 1; i < argc; i++) // iterating through each argument seperated by spaces
-		{
-			for (int j = 0; j < strLength(argv[i]); j++) // iterating through each char
-			{
-				*in.p++ = (char)((argv[i])[j]); // assigning character to in[] and increment the pointer
-			}
-			if(i < argc) *in.p++ = ' '; // adding in spaces based on argc and i
-		}
-		*in.p = 0;
-		interpret(in.a, argc);
+		printf("Not enough arguments, must provide a file to read.\n");
 	}
-	return 0; ////////// EXIT
 }
+

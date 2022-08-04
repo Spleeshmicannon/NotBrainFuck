@@ -87,9 +87,15 @@ void interpret(char *c, int argc)
 			switch (o = 1, *c++)
 			{
 			// added stuff
-			case '|': comments = true;			 			 break; // adds commenting properly as: code here|comment here|code here
-			case '*': out.a[out.i] *= out.a[out.i + 1]; 	 break; // multiplies current cell by its upper neighbour
-			case 'x': out.a[out.i] *= out.a[out.i - 1];		 break; // multiplies current cell by its lower neighbour
+			case '|': 
+				comments = true;			 		
+				break; // adds commenting properly as: code here|comment here|code here
+			case '*': 
+				out.a[out.i] *= out.a[out.i + 1]; 
+				break; // multiplies current cell by its upper neighbour
+			case 'x': 
+				out.a[out.i] *= out.a[out.i - 1];
+				break; // multiplies current cell by its lower neighbour
 			case '/':	// divides current cell by its upper neighbour
 				if((out.a[out.i] != 0)&&(out.a[out.i + 1] != 0)) 
 					out.a[out.i] /= out.a[out.i + 1];
@@ -108,9 +114,15 @@ void interpret(char *c, int argc)
 					return;	 
 				}
 				break;
-			case '#': out.a[out.i] = *c; 			 		 break; // makes the current cell = the next character as a char value (syntax for making cell = #d)
-			case '^': base++;				 				 break; // increases the base
-			case 'v': if (base > 1) base--;			 		 break; // decreases the base if is larger than one
+			case '#': 
+				out.a[out.i] = *c; 
+				break; // makes the current cell = the next character as a char value (syntax for making cell = #d)
+			case '^':
+				base++;	
+				break; // increases the base
+			case 'v': 
+				if (base > 1) base--;	 
+				break; // decreases the base if is larger than one
 			case '{': 
 				jmp.a[jmp.i] = c;
 				jmp.l[jmp.i] = *c;
@@ -163,11 +175,21 @@ void interpret(char *c, int argc)
 					return;
 				}
 				break;
-			case '>': out.i++;                                break;
-			case '+': out.a[out.i] += base;			 break;
-			case '-': out.a[out.i] -= base;			 break;
-			case '.': putchar(out.a[out.i]); fflush(stdout);	 break;
-			case ',': out.a[out.i] = getchar(); fflush(stdout); break;
+			case '>': 
+				out.i++; 
+				break;
+			case '+':
+				out.a[out.i] += base;
+				break;
+			case '-': 
+				out.a[out.i] -= base;
+				break;
+			case '.': 
+				putchar(out.a[out.i]); fflush(stdout);
+				break;
+			case ',': 
+				out.a[out.i] = getchar(); fflush(stdout); 
+				break;
 			case '[':
 				for (b = 1, d = c; b && *c; c++)
 				{
